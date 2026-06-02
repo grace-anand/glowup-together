@@ -1,0 +1,22 @@
+# Railway deployment configuration
+# Alternative deployment target (primary target is Cloudflare Workers)
+# Docs: https://docs.railway.com/reference/config-as-code
+#
+# To deploy to Railway instead of Cloudflare:
+# 1. Install Railway CLI: pnpm add -g @railway/cli
+# 2. Login: railway login
+# 3. Init project: railway init
+# 4. Deploy: railway up
+#
+# Note: When targeting Railway, switch the Vite config from
+# the Cloudflare plugin to the default Node.js/Nitro adapter.
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "pnpm run build"
+
+[deploy]
+startCommand = "pnpm run start"
+healthcheckPath = "/"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5

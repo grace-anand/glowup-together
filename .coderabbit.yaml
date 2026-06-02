@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# CodeRabbit Configuration
+# Install the CodeRabbit GitHub App: https://github.com/apps/coderabbitai
+# Docs: https://docs.coderabbit.ai/getting-started/quickstart
+
+language: "en-US"
+
+reviews:
+  profile: "assertive"
+  high_level_summary: true
+  poem: false
+  collapse_walkthrough: false
+  sequence_diagrams: true
+
+  path_instructions:
+    - path: "src/routes/**"
+      instructions: |
+        Review TanStack Router file-based route conventions.
+        Ensure createFileRoute path matches the file path.
+        Check that loaders use createServerFn for server-only code.
+    - path: "src/db/**"
+      instructions: |
+        Verify Drizzle schema changes have corresponding migrations.
+        Check that DATABASE_URL is accessed server-side only.
+    - path: "drizzle.config.ts"
+      instructions: |
+        Ensure schema path and dialect match the project setup.
+
+  path_filters:
+    - "!dist/**"
+    - "!.output/**"
+    - "!node_modules/**"
+    - "!*.lock"
+    - "!src/routeTree.gen.ts"
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+chat:
+  auto_reply: true
