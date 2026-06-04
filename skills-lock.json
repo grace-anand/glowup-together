@@ -48,6 +48,12 @@
       "skillPath": "skills/features/clerk-webhooks/SKILL.md",
       "computedHash": "de12deda380be19d32d62c4106a6b78736cd4d9cc6dd5b214f6039853ad89e54"
     },
+    "create-implementation-plan": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/create-implementation-plan/SKILL.md",
+      "computedHash": "4764bacd34af8e5c27a85ca01a90197afcf1f1ed1785975ba91d9b80dff60e2d"
+    },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",

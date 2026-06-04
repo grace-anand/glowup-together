@@ -1,19 +1,18 @@
 import {
-  SignedIn,
+  Show,
   SignInButton,
-  SignedOut,
   UserButton,
 } from '@clerk/react'
 
 export default function HeaderUser() {
   return (
     <>
-      <SignedIn>
+      <Show when="signed-in">
         <UserButton />
-      </SignedIn>
-      <SignedOut>
+      </Show>
+      <Show when="signed-out">
         <SignInButton />
-      </SignedOut>
+      </Show>
     </>
   )
 }
